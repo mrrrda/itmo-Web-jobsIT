@@ -1,0 +1,37 @@
+{{#if userInformation}}
+<section class="chat-container chat-container_p_l flex flex_justify_end">
+  <form action="" id="chat-form">
+    <input type="text" name="personal-email" value="{{userInformation.email}}" hidden>
+    <section
+      class="chat-box chat-box_m chat-box_dark chat-box_p_ul chat-box_border-radius_l chat-box_hidden flex flex_column flex_gap_xl"
+      id="chat-box">
+      <section data-input-name="recipient"
+        class="chat-box__recepient chat-box__recepient_pb_l flex flex_column flex_gap_m">
+        <p class="text text_paragraph text_color_primary-light text_font-weight_light flex_align-self_end">Recipient
+          email</p>
+        <input class="input chat-box__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+          name="recipient" placeholder="example@gmail.com">
+        <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+      </section>
+      <section class="chat-box__messages flex flex_column flex_gap_l" id="chat-messages">
+      </section>
+      <section class="flex flex_row flex_gap_m">
+        <div data-input-name="message" class="flex flex_grow_3 flex_column">
+          <input class="input chat-box__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+            name="message" placeholder="Send message">
+          <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+        </div>
+        <button
+          class="chat_box__button button button_small button_primary flex_grow_1 text text_color_primary-light text_font-size_m">Send</button>
+      </section>
+    </section>
+  </form>
+  <div class="chat-button" id="chat-button">
+    <div class="avatar avatar_size_s avatar_circular">
+      <img class="avatar__image" src="./images/Chat-Icon.webp" alt="Chat">
+    </div>
+    <span class="chat-button__message-notification chat-button__message-notification_hidden"
+      id="message-notification"></span>
+  </div>
+</section>
+{{/if}}

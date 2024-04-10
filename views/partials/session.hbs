@@ -1,0 +1,22 @@
+{{#if userInformation}}
+<p class="text text_paragraph text_color_secondary-dark text_font-size_l">{{userInformation.firstName}}
+  {{userInformation.lastName}}</p>
+<div class="header__user-logo avatar avatar_size_s avatar_circular" id="headerUserLogo">
+  <img class="user-avatar avatar__image" src={{userInformation.avatar}} alt="Avatar">
+  <section
+    class="header__dropdown-menu dropdown-menu dropdown-menu_hidden dropdown-menu_position_tr dropdown-menu_border-radius_l dropdown-menu_bg-color_main dropdown-menu_p_xl"
+    id="headerDropdownMenu">
+    <a class="link dropdown-menu__link text text_font-size_l text_color_secondary-dark" href="/">Profile</a>
+    <a class="link dropdown-menu__link text text_font-size_l text_color_secondary-dark" href="/">Notification</a>
+    <a class="link dropdown-menu__link text text_font-size_l text_color_secondary-dark" href="/sign-out">Sign
+      out</a>
+  </section>
+</div>
+{{else}}
+<a class="button button_small button_text text text_color_primary-light text_font-size_l text_font-weight_medium"
+  href="/sign-in">Sign
+  in</a>
+<a class="button button_small button_secondary text text_color_secondary-light text_font-size_l text_font-weight_medium"
+  href="/sign-up">Sign
+  up</a>
+{{/if}}

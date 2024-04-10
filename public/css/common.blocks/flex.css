@@ -1,0 +1,151 @@
+.flex_grow_1 {
+  flex-grow: 1;
+}
+
+.flex_grow_2 {
+  flex-grow: 2;
+}
+
+.flex_grow_3 {
+  flex-grow: 3;
+}
+
+.flex_grow_4 {
+  flex-grow: 4;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_row {
+  flex-direction: row;
+}
+
+.flex_column {
+  flex-direction: column;
+}
+
+.flex_align_center {
+  align-items: center;
+}
+
+.flex_align_end {
+  align-items: flex-end;
+}
+
+.flex_align_stretch {
+  align-items: stretch;
+}
+
+.flex_align-self_start {
+  align-self: flex-start;
+}
+
+.flex_align-self_end {
+  align-self: flex-end;
+}
+
+.flex_align-self_center {
+  align-self: center;
+}
+
+.flex_justify_start {
+  justify-content: flex-start;
+}
+
+.flex_justify_center {
+  justify-content: center;
+}
+
+.flex_justify_end {
+  justify-content: flex-end;
+}
+
+.flex_justify_between {
+  justify-content: space-between;
+}
+
+.flex_gap_m {
+  gap: var(--spacing-m);
+}
+
+.flex_gap_l {
+  gap: var(--spacing-l);
+}
+
+.flex_gap_xl {
+  gap: var(--spacing-xl);
+}
+
+.flex_gap_xxl {
+  gap: var(--spacing-xxl);
+}
+
+.flex_gap_xxxl {
+  gap: var(--spacing-xxxl);
+}
+
+.flex_gap_ul {
+  gap: var(--spacing-ul);
+}
+
+.flex_gap_uul {
+  gap: calc(1.5 * var(--spacing-ul));
+}
+
+@media screen and (max-width: 1200px) {
+  .flex_column_bp_l {
+    flex-direction: column;
+  }
+
+  .flex_gap_l_bp_l {
+    gap: var(--spacing-l);
+  }
+
+  .flex_gap_xxl_bp_l {
+    gap: var(--spacing-xxl);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .flex_column_bp_m {
+    flex-direction: column;
+  }
+
+  .flex_gap_l_bp_m {
+    gap: var(--spacing-l);
+  }
+
+  .flex_gap_xxl_bp_m {
+    gap: var(--spacing-xxl);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex_column_bp_s {
+    flex-direction: column;
+  }
+
+  .flex_gap_l_bp_s {
+    gap: var(--spacing-l);
+  }
+
+  .flex_gap_xl_bp_s {
+    gap: var(--spacing-xl);
+  }
+
+  .flex_gap_xxl_bp_s {
+    gap: var(--spacing-xxl);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flex_column_bp_xs {
+    flex-direction: column;
+  }
+
+  .flex_gap_l_bp_xs {
+    gap: var(--spacing-l);
+  }
+}

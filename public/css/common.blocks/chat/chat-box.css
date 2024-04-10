@@ -1,0 +1,38 @@
+.chat-box {
+  position: absolute;
+  bottom: 100%;
+  right: var(--spacing-l);
+  z-index: 10;
+}
+
+.chat-box_m {
+  width: 20%;
+}
+
+.chat-box_dark {
+  background-color: var(--background);
+}
+
+.chat-box_p_ul {
+  padding: var(--spacing-ul);
+}
+
+.chat-box_border-radius_l {
+  border-radius: var(--spacing-l);
+}
+
+.chat-box_hidden {
+  display: none;
+}
+
+.chat-box__input {
+  width: 100%;
+}
+
+.chat-box__input_height_s {
+  height: 40px;
+}
+
+.chat_box__button {
+  max-height: 32px;
+}

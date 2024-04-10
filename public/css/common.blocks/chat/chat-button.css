@@ -1,0 +1,18 @@
+.chat-button {
+  position: relative;
+  cursor: pointer;
+}
+
+.chat-button__message-notification {
+  background-color: var(--font-error);
+  border-radius: var(--spacing-l);
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chat-button__message-notification_hidden {
+  display: none;
+}

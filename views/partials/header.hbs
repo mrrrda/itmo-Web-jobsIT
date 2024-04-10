@@ -1,0 +1,32 @@
+<header class="header flex flex_align_center flex_justify_between flex_column_bp_s flex_gap_l_bp_s">
+  <div class="header__left flex flex_justify_start flex_align_center flex_column_bp_xs flex_gap_l_bp_xs">
+    <section class="flex flex_gap_m">
+      <h2 class="header__title text text_heading_2 text_color_secondary-light text_font-size_xxl text_font-weight_bold">
+        <strong>JobsIT</strong>
+      </h2>
+      <div class="avatar avatar_size_xs avatar_circular flex_align-self_center">
+        <img class="avatar__image" src="./images/Logo.webp" alt="Avatar">
+      </div>
+    </section>
+    <nav class="header__navigation">
+      <ul class="flex">
+        <li class="header__navigation-item">
+          <a class="link header__navigation-link text text_color_secondary-dark text_font-size_l" href="/">Home</a>
+        </li>
+        <li class="header__navigation-item">
+          <a class="link header__navigation-link text text_color_secondary-dark text_font-size_l"
+            href="/stats">Stats</a>
+        </li>
+        <li class="header__navigation-item">
+          <a class="link header__navigation-link text text_color_secondary-dark text_font-size_l" href="/about">About
+            us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="flex flex_justify_end">
+    <section class="flex flex_row flex_align_center flex_gap_l">
+      {{> session}}
+    </section>
+  </div>
+</header>

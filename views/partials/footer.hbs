@@ -1,0 +1,14 @@
+<footer class="footer">
+  <div class="flex flex_justify_between flex_column_bp_s">
+    <p class="text text_paragraph text_color_primary-light text_font-weight_light">&#169 2023 Mariyorda</p>
+    <p class="text text_paragraph text_color_primary-light text_font-weight_light text_direction_rtl">&#33; &#34; &#35;
+      &#36; &#37; &#38; &#39; &#40; &#41; &#42; &#43; &#44; &#91; &#92; &#93; &#94; &#95; &#124; &#125; &#126;</p>
+    <section class="flex flex_column">
+      <p class="footer__load-time text text_paragraph text_color_primary-light text_font-weight_light"></p>
+      {{#if serverResponseTime}}
+      <p class="text text_paragraph text_color_primary-light text_font-weight_light">Server response time:
+        {{serverResponseTime}}ms</p>
+      {{/if}}
+    </section>
+  </div>
+</footer>

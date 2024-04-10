@@ -1,0 +1,7 @@
+.chat-box__recepient {
+  border-bottom: calc(0.5 * var(--spacing-s)) solid var(--white);
+}
+
+.chat-box__recepient_pb_l {
+  padding-bottom: var(--spacing-l);
+}

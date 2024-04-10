@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headBase}}
+  <meta name="keywords" content="jobs, jobs searching, it, sign in, login">
+  <title>Sign in</title>
+  <link rel="stylesheet" href="../css/pages/sign-in.css">
+  <script type="module" src="../js/modules/auth/sign-in-form.mjs">
+  </script>
+</head>
+
+<body class="flex flex_column">
+  {{> header}}
+
+  <main>
+    <div class="main-wrapper main-wrapper_width_l flex flex_align_center flex_justify_center">
+      <div
+        class="container container_width_l container_py_xxxl container_px_xxxl flex flex_align_center flex_justify_center flex_gap_xxxl flex_column_bp_m flex_gap_xxl_bp_m">
+        <section
+          class="paper paper_width_m paper_bg-color_main paper_border-radius_l paper_p_ul flex flex_column flex_gap_ul">
+          <div class="avatar avatar_size_s avatar_circular flex_align-self_center">
+            <img class="avatar__image" src="./images/Logo.webp" alt="Avatar">
+          </div>
+          <section class="auth flex flex_align_center flex_justify_center">
+            <form data-input-name="sign-in-form" id="sign-in-form" action="/api/auth/signin"
+              class="auth__form flex flex_column flex_gap_xxl flex_column_bp_s flex_gap_xl_bp_s">
+              <label class="flex flex_column flex_gap_m">
+                <span class="input__label text text_color_primary-light text_font-weight_light">Email</span>
+                <div data-input-name="email" class="auth__input-container flex flex_column">
+                  <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                    name="email" placeholder="Example@gmail.com">
+                  <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                </div>
+              </label>
+              <label class="flex flex_column flex_gap_m">
+                <span class="input__label text text_color_primary-light text_font-weight_light">Password</span>
+                <div data-input-name="password" class="auth__input-container flex flex_column">
+                  <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="password"
+                    name="password" placeholder="Minimum of 8 characters">
+                  <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                </div>
+              </label>
+              <button class="button button_small button_primary text text_color_primary-light text_font-size_m">Sign
+                in</button>
+              <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+            </form>
+          </section>
+          <section class="flex flex_column flex_align_center flex_gap_m">
+            <p class="text text_paragraph text_color_primary-light text_font-weight_light">Don't have
+              an
+              account yet?</p>
+            <a class="button button_small button_secondary text text_color_primary-light text_font-size_m text_font-weight_light text_align_center"
+              href="/sign-up">Sign up</a>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  {{> footer}}
+</body>
+
+</html>

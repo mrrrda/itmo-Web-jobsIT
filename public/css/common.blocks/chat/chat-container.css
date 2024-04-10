@@ -1,0 +1,7 @@
+.chat-container {
+  position: relative;
+}
+
+.chat-container_p_l {
+  padding: var(--spacing-l);
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headBase}}
+  <meta name="keywords" content="jobs, jobs searching, it, programming jobs">
+  <meta name="description" content="JobsIT - Find your dream job and job about it!">
+  <title>Jobs Search</title>
+  <link rel="stylesheet" href="../css/pages/jobs.css">
+  <script type="module" src="../js/modules/job/index.mjs"></script>
+</head>
+
+<body class="flex flex_column">
+  {{> header}}
+
+  <main>
+    <div class="main-wrapper main-wrapper_width_xl">
+      <div class="container container_py_xxxl container_px_xxxl flex flex_column flex_gap_xxxl">
+        <section class="job-search job-search_small flex">
+          <form id="job-search-form" class="job-search__form flex flex_column_bp_s flex_gap_xl_bp_s">
+            <div class="job-search__input-container">
+              <input class="input job-search__input input_bg-color_light input_p_xl input_border-radius_l" type="text"
+                name="title" placeholder="Front-end Developer">
+              <span
+                class="job-search__error-message input__error-message input__error-message_hidden text text_font-size_s"></span>
+            </div>
+            <div class="job-search__input-container">
+              <input class="input job-search__input input_bg-color_light input_p_xl input_border-radius_l" type="text"
+                name="location" placeholder="Saint-Petersburg">
+              <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+            </div>
+            <button
+              class="button button_large button_primary text text_color_primary-light text_font-size_l">Search</button>
+          </form>
+        </section>
+        <h4 class="text text_heading_4 text_color_primary-light text_underlined">Number of found jobs:</h4>
+        <div class="flex flex_gap_xxxl flex_column_bp_l flex_gap_xxl_bp_s">
+          <aside class="job-filters paper paper_p_ul paper_border-radius_l paper_bg-color_main flex">
+            <form id="job-filter-form" class="job-search__filter-form flex flex_column flex_gap_xxl">
+              <div class="flex flex_column flex_gap_m">
+                <span class="text text_color_primary-light text_font-weight_light">Experience Level</span>
+                <div class="select select_primary select_small select_border-radius_l" name="experience">
+                  <div class="select__option select__option_selected">Not specified</div>
+                  <ul class="select__options select__options_hidden">
+                    <li class="select__option" data-value="">Not specified</li>
+                    <li class="select__option" data-value="INTERN">Intern</li>
+                    <li class="select__option" data-value="JUNIOR">Junior</li>
+                    <li class="select__option" data-value="MIDDLE">Middle</li>
+                    <li class="select__option" data-value="SENIOR">Senior</li>
+                    <li class="select__option" data-value="LEAD">Lead</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex_column flex_gap_m">
+                <span class="text text_color_primary-light text_font-weight_light">Education</span>
+                <div class="select select_primary select_small select_border-radius_l" name="education">
+                  <div class="select__option_selected">Not specified</div>
+                  <ul class="select__options select__options_hidden">
+                    <li class="select__option" data-value="">Not specified</li>
+                    <li class="select__option" data-value="BACHELORS">Bachelors</li>
+                    <li class="select__option" data-value="MASTERS">Masters</li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <label class="flex flex_column flex_gap_m">
+                  <span class="input__label text text_color_primary-light text_font-weight_light">Salary range</span>
+                  <div class="flex flex_row flex_gap_xl">
+                    <div class="flex flex_column">
+                      <input class="input job-search__input input_bg-color_light input_p_m input_border-radius_l"
+                        type="text" name="minSalary" placeholder="$1000">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                    <div class="flex flex_column">
+                      <input class="input job-search__input input_bg-color_light input_p_m input_border-radius_l"
+                        type="text" name="maxSalary" placeholder="$4000">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="flex flex_column flex_gap_m">
+                <span class="text text_color_primary-light text_font-weight_light">Work Schedule</span>
+                <div class="select select_primary select_small select_border-radius_l" name="workSchedule">
+                  <div class="select__option_selected">Not specified</div>
+                  <ul class="select__options select__options_hidden">
+                    <li class="select__option" data-value="">Not specified</li>
+                    <li class="select__option" data-value="FIXED">Fixed</li>
+                    <li class="select__option" data-value="SHIFTS">Shifts</li>
+                    <li class="select__option" data-value="FLEXIBLE">Flexible</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex_column flex_gap_m">
+                <span class="text text_color_primary-light text_font-weight_light">Work Place</span>
+                <div class="select select_primary select_small select_border-radius_l" name="workPlace">
+                  <div class="select__option_selected">Not specified</div>
+                  <ul class="select__options select__options_hidden">
+                    <li class="select__option" data-value="">Not specified</li>
+                    <li class="select__option" data-value="OFFICE">Office</li>
+                    <li class="select__option" data-value="REMOTE">Remote</li>
+                    <li class="select__option" data-value="HYBRID">Hybrid</li>
+                  </ul>
+                </div>
+              </div>
+              <button
+                class="button button_small button_primary text text_color_primary-light text_font-size_m">Filter</button>
+            </form>
+          </aside>
+          <section id="jobs-container-section"
+            class="paper paper_p_ul paper_border-radius_l paper_bg-color_main flex_grow_4">
+            {{#if jobs}}
+            <section id="jobs-container" class="jobs-container">
+              {{#each jobs}}
+              <article class="job-item">
+                <div class="job-item__logo-section">
+                  <div class="avatar avatar_size_s avatar_circular">
+                    <img class="avatar__image" src={{this.location.company.logo}} alt="Logo">
+                  </div>
+                </div>
+                <div class="job-item__content-section flex flex_column flex_gap_xl">
+                  <div>
+                    <p class="text text_paragraph text_color_primary-light text_font-size_l text_font-weight_medium">
+                      {{this.location.company.name}}</p>
+                    <p
+                      class="text text_paragraph text_color_secondary-dark text_font-size_s text_font-weight_light text_overlined">
+                      {{this.location.address.country}}, {{this.location.address.city}}</p>
+                  </div>
+                  <div class="flex flex_column flex_gap_xl">
+                    <div>
+                      <h4 class="text text_heading_4 text_color_secondary-light">{{this.title}}</h4>
+                      <p class="text text_paragraph text_color_secondary-light">{{this.experience}}</p>
+                    </div>
+                    <p class="text text_paragraph text_color_primary-light">
+                      ${{this.minSalary}}{{#if this.maxSalary}} - {{this.maxSalary}}{{/if}}
+                    </p>
+                  </div>
+                  <div class="flex flex_gap_xl">
+                    <p class="text text_paragraph text_color_primary-light text_font-size_s">{{this.workSchedule}}</p>
+                    <p class="text text_paragraph text_color_primary-light text_font-size_s">{{this.workPlace}}</p>
+                  </div>
+                </div>
+              </article>
+              {{/each}}
+            </section>
+            {{else}}
+            <div class="flex flex_justify_center">
+              <p class="text text_paragraph text_color_primary-light">No suitable vacancies found</p>
+            </div>
+            {{/if}}
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {{> footer}}
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.dropdown-menu {
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-menu_hidden {
+  display: none;
+}
+
+.dropdown-menu_position_tr {
+  top: 100%;
+  right: 0;
+}
+
+.dropdown-menu_border-radius_l {
+  border-radius: var(--spacing-l);
+}
+
+.dropdown-menu_bg-color_main {
+  background-color: var(--background);
+}
+
+.dropdown-menu_p_xl {
+  padding: var(--spacing-xl);
+}
+
+.dropdown-menu .dropdown-menu__link:not(:last-child) {
+  margin-bottom: var(--spacing-m);
+}

@@ -1,0 +1,16 @@
+.auth {
+  padding: var(--spacing-m) 0;
+}
+
+.auth .auth__form {
+  width: 80%;
+}
+
+.auth .auth__form .auth__input-container {
+  width: 100%;
+  margin-right: var(--spacing-xl);
+}
+
+.auth .auth__form .auth__input {
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+.button {
+  display: block;
+  font-family: var(--font-family-main);
+  border-radius: var(--spacing-l);
+  max-height: 48px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button_small {
+  padding: var(--spacing-m) var(--spacing-xl);
+}
+
+.button_medium {
+  padding: var(--spacing-l) var(--spacing-l);
+}
+
+.button_large {
+  padding: var(--spacing-l) var(--spacing-xxl);
+}
+
+.button_primary {
+  background-color: var(--secondary-light);
+}
+
+.button_secondary {
+  background-color: var(--primary-light);
+}
+
+.button_info {
+  background-color: var(--secondary-dark);
+}
+
+.button_text {
+  background-color: transparent;
+}

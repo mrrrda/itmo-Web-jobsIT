@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headBase}}
+  <meta name="keywords" content="jobs, jobs searching, it, information, contacts">
+  <meta name="description" content="JobsIT - Learn more about us!">
+  <title>About</title>
+  <link rel="stylesheet" href="../css/pages/about.css">
+</head>
+
+<body class="flex flex_column">
+  {{> header}}
+
+  <main>
+    <div class="main-wrapper main-wrapper_width_l flex flex_align_center flex_justify_center">
+      <div class="container container_py_xxxl container_px_xxxl flex flex_gap_xxxl flex_column_bp_m flex_gap_xxl_bp_m">
+        <section class="paper paper_bg-color_dark paper_border-radius_l paper_p_ul flex flex_column flex_gap_ul">
+          <section class="flex flex_column flex_gap_xxxl">
+            <h3 class="text text_heading_3 text_color_primary-light text_font-weight_medium">About Us</h3>
+            <p class="text text_paragraph text_color_primary-light text_indent_xl">JobsIT -
+              But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
+              born and I will give you a complete account of the system, and expound the actual teachings of the great
+              explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure
+              itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally
+              encounter consequences that are extremely painful.
+
+              Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is
+              pain, but because occasionally circumstances occur in which toil and pain can procure him some
+              great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except
+              to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a
+              pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
+            </p>
+          </section>
+          <section class="search-banner__section flex flex_justify_center flex_align_center">
+            <div
+              class="platform-info search-banner__stats flex flex_justify_between flex_align_center flex_column_bp_s flex_gap_xxl_bp_s">
+              {{> statsSection stats=stats usersAvatars=usersAvatars}}
+            </div>
+          </section>
+        </section>
+        <section class="paper paper_bg-color_dark paper_border-radius_l paper_p_ul flex flex_column flex_gap_xl">
+          <div>
+            <h3 class="text text_heading_3 text_color_primary-light text_font-weight_medium">Contacts</h3>
+          </div>
+          <div>
+            <p class="text text_paragraph text_color_primary-light">{{contacts.firstName}} {{contacts.lastName}}</p>
+            <p class="text text_paragraph text_color_secondary-dark text_font-weight_light">{{contacts.role}}</p>
+          </div>
+          <div>
+            <p class="text text_paragraph text_color_primary-light">{{contacts.phoneNumber}}</p>
+            <p class="text text_paragraph text_color_primary-light">{{contacts.email}}</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  {{> footer}}
+</body>
+
+</html>

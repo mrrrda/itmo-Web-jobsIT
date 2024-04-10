@@ -1,0 +1,23 @@
+.code {
+  font-family: var(--font-family-code);
+}
+
+.code_bg-color_dark {
+  background-color: var(--secondary-dark);
+}
+
+.code_bg-color_main {
+  background-color: var(--primary-main);
+}
+
+.code_color_light {
+  color: var(--font-primary-light);
+}
+
+.code_p_l {
+  padding: var(--spacing-l);
+}
+
+.code_border-radius_l {
+  border-radius: var(--spacing-l);
+}

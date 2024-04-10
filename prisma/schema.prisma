@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  authId       String        @unique
+  email        String        @unique
+  password     String         
+  firstName    String
+  lastName     String
+  role         Role          @default(GUEST)
+  companyStaff CompanyStaff?
+  applicant    Applicant?
+}
+
+model CompanyStaff {
+  id        Int     @id @default(autoincrement())
+  user      User    @relation(fields: [userId], references: [id])
+  userId    Int     @unique
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId Int
+}
+
+model Applicant {
+  id     Int  @id @default(autoincrement())
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @unique
+  cvs    Cv[]
+}
+
+model Company {
+  id            Int               @id @default(autoincrement())
+  name          String
+  description   String?
+  logo          String?
+  locations     CompanyLocation[]
+  companyStaffs CompanyStaff[]
+}
+
+model Cv {
+  id              Int           @id @default(autoincrement())
+  applicant       Applicant     @relation(fields: [applicantId], references: [id])
+  applicantId     Int
+  applications    Application[]
+  country         String
+  position        String
+  experience Experience?
+  education       Education?
+  minSalary       Int?
+  maxSalary       Int?
+  skills          String[]
+  workSchedule    WorkSchedule    @default(FIXED)
+  workPlace       WorkPlace       @default(OFFICE)
+}
+
+model JobItem {
+  id              Int             @id @default(autoincrement())
+  applications    Application[]
+  title           String
+  description     String
+  location        CompanyLocation @relation(fields: [locationId], references: [id])
+  locationId      Int
+  experience Experience?
+  education       Education?
+  minSalary       Int
+  maxSalary       Int?
+  workSchedule    WorkSchedule    @default(FIXED)
+  workPlace       WorkPlace       @default(OFFICE)
+}
+
+model Application {
+  id        Int               @id @default(autoincrement())
+  jobItem   JobItem           @relation(fields: [jobItemId], references: [id])
+  jobItemId Int
+  cv        Cv                @relation(fields: [cvId], references: [id])
+  cvId      Int
+  status    ApplicationStatus @default(SUBMITTED)
+}
+
+model CompanyLocation {
+  id        Int       @id @default(autoincrement())
+  address   Address   @relation(fields: [addressId], references: [id])
+  addressId Int       @unique
+  company   Company   @relation(fields: [companyId], references: [id])
+  companyId Int
+  JobItems  JobItem[]
+}
+
+model Address {
+  id              Int               @id @default(autoincrement())
+  zip             String
+  country         String
+  city            String
+  address         String
+  CompanyLocation CompanyLocation?
+}
+
+enum Education {
+  BACHELORS
+  MASTERS
+}
+
+enum Experience {
+  INTERN
+  JUNIOR
+  MIDDLE
+  SENIOR
+  LEAD
+}
+
+enum WorkSchedule {
+  FIXED
+  FLEXIBLE
+  SHIFTS
+}
+
+enum WorkPlace {
+  OFFICE
+  REMOTE
+  HYBRID
+}
+
+enum Role {
+  GUEST
+  APPLICANT
+  EMPLOYER
+}
+
+enum ApplicationStatus {
+  SUBMITTED
+  CANCELLED
+  APPROVED
+  REJECTED
+}

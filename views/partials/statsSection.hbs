@@ -1,0 +1,15 @@
+<div class="platform-info__item avatars-group">
+  {{#each usersAvatars}}
+  <div class="avatars-group__item avatar avatar_size_m avatar_circular {{#if @last}}avatar_shadow_light{{/if}}">
+    <img class="avatar__image" src={{this.src}} alt="Avatar">
+  </div>
+  {{/each}}
+</div>
+<div class="platform-info__item platform-stats flex">
+  {{#each stats}}
+  <div class="platform-stats__item">
+    <h4 class="text text_heading_4 text_color_primary-light">{{this.count}}+</h4>
+    <p class="text text_paragraph text_color_primary-light text_font-weight_light">{{this.entity}}</p>
+  </div>
+  {{/each}}
+</div>

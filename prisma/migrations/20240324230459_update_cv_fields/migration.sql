@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Cv" ALTER COLUMN "education" DROP NOT NULL,
+ALTER COLUMN "minSalary" DROP NOT NULL;

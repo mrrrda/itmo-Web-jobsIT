@@ -1,0 +1,34 @@
+.paper_width_m {
+  width: 60%;
+  max-width: var(--content-width-m);
+}
+
+.paper_bg-color_dark {
+  background-color: var(--secondary-dark);
+}
+
+.paper_bg-color_main {
+  background-color: var(--primary-main);
+}
+
+.paper_bg-color_light {
+  background-color: var(--primary-light);
+}
+
+.paper_bg-color_transparent {
+  background-color: transparent;
+}
+
+.paper_border-radius_l {
+  border-radius: var(--spacing-l);
+}
+
+.paper_p_ul {
+  padding: var(--spacing-ul);
+}
+
+@media screen and (max-width: 768px) {
+  .paper_bg-color_transparent_bp_s {
+    background-color: transparent;
+  }
+}

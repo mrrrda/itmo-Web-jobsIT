@@ -1,0 +1,36 @@
+.select__options {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  list-style: none;
+  background-color: inherit;
+  overflow-y: auto;
+  max-height: 10vh;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-light) transparent;
+  border: solid calc(var(--spacing-s) * 0.75) var(--primary-main);
+}
+
+.select__options_hidden {
+  display: none;
+}
+
+.select__options .select__option:not(:last-child) {
+  margin-bottom: var(--spacing-s);
+}
+
+.select__option {
+  color: var(--font-secondary-dark);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-m);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.select__option:hover {
+  background-color: transparent;
+  color: var(--font-secondary-light);
+}

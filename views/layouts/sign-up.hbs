@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headBase}}
+  <meta name="keywords" content="jobs, jobs searching, it, sign in, login">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="../css/pages/sign-up.css">
+  <script type="module" src="../js/modules/auth/sign-up-form.mjs"></script>
+  <script src="../js/company-info-fieldset.js" defer></script>
+</head>
+
+<body class="flex flex_column">
+  {{> header}}
+
+  <main>
+    <div class="main-wrapper main-wrapper_width_l flex flex_align_center flex_justify_center">
+      <div
+        class="container container_width_l container_py_xxxl container_px_xxxl flex flex_align_center flex_justify_center flex_gap_xxxl flex_column_bp_m flex_gap_xxl_bp_m">
+        <section
+          class="paper paper_width_m paper_bg-color_main paper_border-radius_l paper_p_ul flex flex_column flex_gap_ul">
+          <div class="avatar avatar_size_s avatar_circular flex_align-self_center">
+            <img class="avatar__image" src="./images/Logo.webp" alt="Avatar">
+          </div>
+          <section class="auth flex flex_align_center flex_justify_center">
+            <form data-input-name="sign-up-form" id="sign-up-form" action="/api/auth/signup"
+              class="auth__form flex flex_column flex_gap_xxl flex_column_bp_s flex_gap_xl_bp_s">
+              <label class="flex flex_column flex_gap_m">
+                <span class="input__label text text_color_primary-light text_font-weight_light">First name</span>
+                <div data-input-name="first-name" class="auth__input-container flex flex_column">
+                  <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                    name="first-name" placeholder="Mariya">
+                  <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                </div>
+              </label>
+              <label class="flex flex_column flex_gap_m">
+                <span class="input__label text text_color_primary-light text_font-weight_light">Last name</span>
+                <div data-input-name="last-name" class="auth__input-container flex flex_column">
+                  <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                    name="last-name" placeholder="Izerakova">
+                  <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                </div>
+              </label>
+              <label class="flex flex_column flex_gap_m">
+                <span class="input__label text text_color_primary-light text_font-weight_light">Email</span>
+                <div data-input-name="email" class="auth__input-container flex flex_column">
+                  <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                    name="email" placeholder="Example@gmail.com">
+                  <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                </div>
+              </label>
+              <label class="flex flex_column flex_gap_m">
+                <span class="input__label text text_color_primary-light text_font-weight_light">Password</span>
+                <div data-input-name="password" class="auth__input-container flex flex_column">
+                  <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="password"
+                    name="password" placeholder="Minimum of 8 characters">
+                  <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                </div>
+              </label>
+              <fieldset data-input-name="user-role" class="fieldset flex_grow_1">
+                <legend class="text text_paragraph text_color_primary-light text_font-weight_light">User role
+                </legend>
+                <section class="container container_py_m flex flex_column flex_gap_l">
+                  <label class="flex flex_gap_m flex_align_center">
+                    <div class="input input_radio">
+                      <input class="input__box" type="radio" name="user-role" value="EMPLOYER">
+                      <span class="input__checkmark"></span>
+                    </div>
+                    <span class="input__label text text_color_primary-light text_font-weight_light">Employer</span>
+                  </label>
+                  <label class="flex flex_gap_m flex_align_center">
+                    <div class="input input_radio">
+                      <input class="input__box" type="radio" name="user-role" value="APPLICANT">
+                      <span class="input__checkmark"></span>
+                    </div>
+                    <span class="input__label text text_color_primary-light text_font-weight_light">Applicant</span>
+                  </label>
+                </section>
+                <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+              </fieldset>
+              <fieldset data-input-name="company-info" class="company-info company-info_hidden fieldset flex_grow_1">
+                <legend class="text text_paragraph text_color_primary-light text_font-weight_light">Company information
+                </legend>
+                <section class="container container_py_m flex flex_column flex_gap_l">
+                  <label class="flex flex_column flex_gap_m">
+                    <span class="input__label text text_color_primary-light text_font-weight_light">Company name</span>
+                    <div data-input-name="company-name" class="auth__input-container flex flex_column">
+                      <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                        name="company-name" placeholder="My-Little-Company">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                  </label>
+                  <label class="flex flex_column flex_gap_m">
+                    <span class="input__label text text_color_primary-light text_font-weight_light">Zip code</span>
+                    <div data-input-name="company-location-zip" class="auth__input-container flex flex_column">
+                      <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                        name="company-location-zip" placeholder="21007">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                  </label>
+                  <label class="flex flex_column flex_gap_m">
+                    <span class="input__label text text_color_primary-light text_font-weight_light">Country</span>
+                    <div data-input-name="company-location-country" class="auth__input-container flex flex_column">
+                      <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                        name="company-location-country" placeholder="USA">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                  </label>
+                  <label class="flex flex_column flex_gap_m">
+                    <span class="input__label text text_color_primary-light text_font-weight_light">City</span>
+                    <div data-input-name="company-location-city" class="auth__input-container flex flex_column">
+                      <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                        name="company-location-city" placeholder="Los Angeles">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                  </label>
+                  <label class="flex flex_column flex_gap_m">
+                    <span class="input__label text text_color_primary-light text_font-weight_light">Address</span>
+                    <div data-input-name="company-location-address" class="auth__input-container flex flex_column">
+                      <input class="input auth__input input_bg-color_light input_p_m input_border-radius_l" type="text"
+                        name="company-location-address" placeholder="Via Marisol">
+                      <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+                    </div>
+                  </label>
+                </section>
+              </fieldset>
+              <button class="button button_small button_primary text text_color_primary-light text_font-size_m">Sign
+                up</button>
+              <span class="input__error-message input__error-message_hidden text text_font-size_s"></span>
+            </form>
+          </section>
+          <section class="flex flex_column flex_align_center flex_gap_m">
+            <p class="text text_paragraph text_color_primary-light text_font-weight_light">Already have an account?</p>
+            <a class="button button_small button_secondary text text_color_primary-light text_font-size_m text_font-weight_light text_align_center"
+              href="/sign-in">Sign in</a>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  {{> footer}}
+</body>
+
+</html>

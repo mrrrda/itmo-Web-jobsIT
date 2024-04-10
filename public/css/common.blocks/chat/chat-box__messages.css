@@ -1,0 +1,17 @@
+.chat-box__messages {
+  min-height: 100px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.chat-box__message-container {
+  background-color: var(--primary-light);
+  width: 45%;
+  border-radius: var(--spacing-l);
+  padding: var(--spacing-m);
+}
+
+.chat-box__message {
+  text-align: center;
+  word-break: break-all;
+}

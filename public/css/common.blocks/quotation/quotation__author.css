@@ -1,0 +1,4 @@
+.quotation__author {
+  color: var(--font-secondary-dark);
+  font-weight: var(--font-weight-light);
+}
